@@ -839,7 +839,7 @@ function App() {
             className="max-w-3xl text-4xl font-normal leading-tight text-white sm:text-6xl"
             style={{ fontFamily: "'Instrument Serif', serif" }}
           >
-            Placeholder reviews until your real client quotes are ready.
+            Trusted for packed dance floors and smooth event flow.
           </h2>
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             {testimonials.map((testimonial) => (
