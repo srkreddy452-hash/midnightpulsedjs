@@ -130,8 +130,7 @@ const serviceOptions = [
   "DJ + MC",
   "DJ + Lighting",
   "DJ + MC + Lighting",
-  "Baraat sound",
-  "Ceremony sound",
+  "Smoke machine",
 ];
 
 const musicOptions = [
@@ -493,7 +492,7 @@ function QuoteSection() {
     city: "",
     venueType: "Banquet Hall",
     guestCoverage: "80-120 guests",
-    services: "DJ + MC + Lighting",
+    services: ["DJ + MC + Lighting"],
     music: "House, Bollywood, Punjabi",
     notes: "",
   });
@@ -509,7 +508,7 @@ function QuoteSection() {
       `City / area: ${quote.city || "-"}`,
       `Venue type: ${quote.venueType}`,
       `Guest coverage: ${quote.guestCoverage}`,
-      `Services needed: ${quote.services}`,
+      `Services needed: ${quote.services.join(", ") || "-"}`,
       `Music styles: ${quote.music || "-"}`,
       `Notes: ${quote.notes || "-"}`,
       "",
@@ -521,6 +520,16 @@ function QuoteSection() {
 
   const updateQuote = (key: keyof typeof quote, value: string) => {
     setQuote((current) => ({ ...current, [key]: value }));
+  };
+
+  const toggleService = (service: string) => {
+    setQuote((current) => {
+      const services = current.services.includes(service)
+        ? current.services.filter((item) => item !== service)
+        : [...current.services, service];
+
+      return { ...current, services };
+    });
   };
 
   return (
@@ -622,18 +631,35 @@ function QuoteSection() {
             </select>
           </label>
 
-          <label className="grid gap-2 text-sm font-medium text-white/74">
-            Services Needed
-            <select
-              value={quote.services}
-              onChange={(event) => updateQuote("services", event.target.value)}
-              className="rounded-[8px] border border-white/10 bg-[#0b0c16] px-4 py-3 text-white outline-none transition focus:border-[#ffb000]/70"
-            >
-              {serviceOptions.map((item) => (
-                <option key={item}>{item}</option>
-              ))}
-            </select>
-          </label>
+          <fieldset className="grid gap-3 text-sm font-medium text-white/74">
+            <legend>Services Needed</legend>
+            <div className="grid gap-2">
+              {serviceOptions.map((item) => {
+                const isSelected = quote.services.includes(item);
+
+                return (
+                  <button
+                    key={item}
+                    type="button"
+                    onClick={() => toggleService(item)}
+                    className={`flex items-center justify-between rounded-[8px] border px-4 py-3 text-left transition ${
+                      isSelected
+                        ? "border-[#ffb000]/80 bg-[#ffb000]/14 text-white"
+                        : "border-white/10 bg-[#0b0c16] text-white/70 hover:border-white/24 hover:text-white"
+                    }`}
+                    aria-pressed={isSelected}
+                  >
+                    <span>{item}</span>
+                    <span
+                      className={`h-4 w-4 rounded-[4px] border ${
+                        isSelected ? "border-[#ffb000] bg-[#ffb000]" : "border-white/28"
+                      }`}
+                    />
+                  </button>
+                );
+              })}
+            </div>
+          </fieldset>
 
           <label className="grid gap-2 text-sm font-medium text-white/74 lg:col-span-2">
             Music Styles
