@@ -1,13 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Midnight Pulse DJs">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Midnight Pulse DJs logo">
   <defs>
-    <linearGradient id="pulse" x1="18" y1="18" x2="110" y2="110" gradientUnits="userSpaceOnUse">
+    <linearGradient id="ring" x1="28" y1="18" x2="132" y2="142" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#ffb000"/>
-      <stop offset="0.48" stop-color="#ff2fb2"/>
+      <stop offset="0.46" stop-color="#ff2fb2"/>
       <stop offset="1" stop-color="#2367ff"/>
     </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="44%" r="58%">
+      <stop offset="0" stop-color="#ff2fb2" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#050713" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#ff2fb2" flood-opacity=".34"/>
+    </filter>
   </defs>
-  <rect width="128" height="128" rx="24" fill="#050713"/>
-  <circle cx="64" cy="64" r="48" fill="none" stroke="url(#pulse)" stroke-width="8"/>
-  <path d="M31 77V45h9l9 15 9-15h9v32h-9V60L52 72h-6L40 60v17h-9Zm45 0V45h16c11 0 19 6 19 16s-8 16-19 16H76Zm9-8h7c6 0 10-3 10-8s-4-8-10-8h-7v16Z" fill="#fff"/>
-  <path d="M26 93c14 9 62 9 76 0" fill="none" stroke="#ffb000" stroke-width="5" stroke-linecap="round"/>
+  <rect width="160" height="160" rx="36" fill="#050713"/>
+  <circle cx="80" cy="80" r="72" fill="url(#glow)"/>
+  <g filter="url(#shadow)">
+    <path d="M80 18c34.2 0 62 27.8 62 62s-27.8 62-62 62-62-27.8-62-62 27.8-62 62-62Z" fill="none" stroke="url(#ring)" stroke-width="8"/>
+    <path d="M23 82h19l9-22 16 49 17-63 12 36h41" fill="none" stroke="url(#ring)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="80" cy="80" r="30" fill="#090a16" stroke="#ffffff" stroke-opacity=".18" stroke-width="3"/>
+    <circle cx="80" cy="80" r="9" fill="#fff"/>
+    <path d="M96 50h23v8h-15v44h-8V50Z" fill="#ffb000"/>
+    <circle cx="116" cy="104" r="8" fill="#ffb000"/>
+  </g>
+  <path d="M47 126c14 9 52 9 66 0" fill="none" stroke="#fff" stroke-opacity=".58" stroke-width="5" stroke-linecap="round"/>
 </svg>

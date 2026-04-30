@@ -680,10 +680,18 @@ function App() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
           <a
             href="#home"
-            className="font-display max-w-[9rem] text-xl leading-none tracking-tight text-white sm:max-w-none sm:text-3xl"
+            className="flex max-w-[12rem] items-center gap-2 text-white sm:max-w-none sm:gap-3"
             aria-label="Midnight Pulse DJs home"
           >
-            Midnight Pulse DJs
+            <img
+              src="/midnight-pulse-logo.svg"
+              alt=""
+              className="h-9 w-9 shrink-0 rounded-[10px] shadow-[0_0_28px_rgba(255,47,178,0.28)] sm:h-11 sm:w-11 sm:rounded-[12px]"
+              aria-hidden="true"
+            />
+            <span className="font-display text-lg leading-none tracking-tight sm:text-3xl">
+              Midnight Pulse DJs
+            </span>
           </a>
           <div className="hidden items-center gap-7 md:flex">
             {navItems.map((item) => (
@@ -889,13 +897,23 @@ function App() {
             <div>
               <a
                 href="#home"
-                className="block max-w-xs text-5xl font-normal leading-[0.95] text-[#ffb000] sm:text-6xl"
-                style={{ fontFamily: "'Instrument Serif', serif" }}
+                className="flex max-w-sm items-center gap-5 text-[#ffb000]"
                 aria-label="Midnight Pulse DJs home"
               >
-                Midnight
-                <br />
-                Pulse DJs
+                <img
+                  src="/midnight-pulse-logo.svg"
+                  alt=""
+                  className="h-20 w-20 shrink-0 rounded-[20px] shadow-[0_0_42px_rgba(255,47,178,0.32)]"
+                  aria-hidden="true"
+                />
+                <span
+                  className="text-5xl font-normal leading-[0.95] sm:text-6xl"
+                  style={{ fontFamily: "'Instrument Serif', serif" }}
+                >
+                  Midnight
+                  <br />
+                  Pulse DJs
+                </span>
               </a>
               <p className="mt-5 max-w-xs text-xs font-semibold uppercase tracking-[0.42em] text-white/46">
                 Music and Entertainment
