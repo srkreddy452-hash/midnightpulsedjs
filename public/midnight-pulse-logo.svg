@@ -1,27 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Midnight Pulse DJs logo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="MP">
   <defs>
-    <linearGradient id="ring" x1="28" y1="18" x2="132" y2="142" gradientUnits="userSpaceOnUse">
+    <linearGradient id="mpGradient" x1="18" y1="18" x2="142" y2="142" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#ffb000"/>
-      <stop offset="0.46" stop-color="#ff2fb2"/>
+      <stop offset="0.48" stop-color="#ff2fb2"/>
       <stop offset="1" stop-color="#2367ff"/>
     </linearGradient>
-    <radialGradient id="glow" cx="50%" cy="44%" r="58%">
-      <stop offset="0" stop-color="#ff2fb2" stop-opacity=".32"/>
-      <stop offset="1" stop-color="#050713" stop-opacity="0"/>
-    </radialGradient>
-    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
-      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#ff2fb2" flood-opacity=".34"/>
+    <filter id="mpGlow" x="-35%" y="-35%" width="170%" height="170%">
+      <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#ff2fb2" flood-opacity=".55"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="18" flood-color="#2367ff" flood-opacity=".26"/>
     </filter>
   </defs>
-  <rect width="160" height="160" rx="36" fill="#050713"/>
-  <circle cx="80" cy="80" r="72" fill="url(#glow)"/>
-  <g filter="url(#shadow)">
-    <path d="M80 18c34.2 0 62 27.8 62 62s-27.8 62-62 62-62-27.8-62-62 27.8-62 62-62Z" fill="none" stroke="url(#ring)" stroke-width="8"/>
-    <path d="M23 82h19l9-22 16 49 17-63 12 36h41" fill="none" stroke="url(#ring)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-    <circle cx="80" cy="80" r="30" fill="#090a16" stroke="#ffffff" stroke-opacity=".18" stroke-width="3"/>
-    <circle cx="80" cy="80" r="9" fill="#fff"/>
-    <path d="M96 50h23v8h-15v44h-8V50Z" fill="#ffb000"/>
-    <circle cx="116" cy="104" r="8" fill="#ffb000"/>
-  </g>
-  <path d="M47 126c14 9 52 9 66 0" fill="none" stroke="#fff" stroke-opacity=".58" stroke-width="5" stroke-linecap="round"/>
+  <rect width="160" height="160" rx="34" fill="#050713"/>
+  <path d="M25 122V38h20l28 42 28-42h20v84h-20V72l-22 33H67L45 72v50H25Z" fill="url(#mpGradient)" filter="url(#mpGlow)"/>
+  <path d="M88 122V38h35c18 0 31 12 31 30s-13 30-31 30h-15v24H88Zm20-43h13c8 0 13-4 13-11s-5-11-13-11h-13v22Z" fill="#fff"/>
+  <path d="M23 128h114" stroke="url(#mpGradient)" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="132" cy="34" r="9" fill="#ffb000"/>
 </svg>
