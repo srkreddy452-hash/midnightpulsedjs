@@ -59,8 +59,8 @@ const venues = [
 
 const guestOptions = [
   { value: 120, label: "80-120 guests", note: "Included with the default DBR15 speaker setup" },
-  { value: 140, label: "+20-40 guests", note: "Adds two small support speakers" },
-  { value: 160, label: "+50-100 guests", note: "Adds a table soundbar support option" },
+  { value: 160, label: "140-160 guests", note: "Adds two small support speakers" },
+  { value: 200, label: "160-200 guests", note: "Adds extra sound support for larger coverage" },
 ] as const;
 
 const setupImages = {
@@ -286,10 +286,10 @@ function SetupVisualizer() {
       showSmallSpeakers: guests >= 140,
       showSoundbar: guests >= 160,
       capacity:
-        guests >= 160
-          ? "Base 80-120 guests + support for +50-100 guests"
-          : guests >= 140
-            ? "Base 80-120 guests + support for +20-40 guests"
+        guests >= 200
+          ? "Expanded coverage for 160-200 guests"
+          : guests >= 160
+            ? "Expanded coverage for 140-160 guests"
             : "Best for 80-120 guests",
     }),
     [guests],
@@ -403,12 +403,12 @@ function SetupVisualizer() {
                   </span>
                   {setup.showSmallSpeakers && (
                     <span className="rounded-full bg-white/14 px-3 py-1 text-xs text-white">
-                      2 small support speakers for +20-40 guests
+                      2 small support speakers for 140-160 guests
                     </span>
                   )}
                   {setup.showSoundbar && (
                     <span className="rounded-full bg-[#ffb000]/24 px-3 py-1 text-xs text-white">
-                      Table soundbar support for +50-100 guests
+                      Extra sound support for 160-200 guests
                     </span>
                   )}
                   <span className="rounded-full bg-[#2367ff]/24 px-3 py-1 text-xs text-white">
